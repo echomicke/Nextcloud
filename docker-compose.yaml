@@ -12,7 +12,7 @@ services:
       - MYSQL_PASSWORD=$MYSQL_PASSWORD
       - MYSQL_DATABASE=$MYSQL_DATABASE
     env_file:
-      - .env
+      - /var/lib/jenkins/envs/.env_nextcloud
 
   redis:
     image: redis:alpine
@@ -27,7 +27,7 @@ services:
       - MYSQL_HOST=db
       - REDIS_HOST=redis
     env_file:
-      - .env
+      - /var/lib/jenkins/envs/.env_nextcloud
     depends_on:
       - db
       - redis
